@@ -1,0 +1,7 @@
+Arduino Uno (recomended) or similar with 5 volt logic level and at least 3 gpios including a suitable power supply (USB phone charger)
+2x DHT22 (strongly recomended) or similar (requires code changes and loss of measurement range)
+Logic level switchable relais board with at least one relais.
+Wooden or other base plate
+insulating screw joint/luster terminal with at least 12 ports
+power strip
+some thin wire for the logic level connection (e.g. telephone wire)

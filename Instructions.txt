@@ -1,0 +1,22 @@
+This is a basic instruction on how to build a simple fan control unit to remove humidity from your basement.
+This guide is not considered complete, it may require additional and individual modifications and some amount of pre-existing knowledge on the software an hardware side.
+I do not take any responsibility for damage caused by using these instructions and the resulting product.
+
+Preparation:
+Cut the cord of the power strip approx 10 cm behind the strip and take of about .5 cm of the insulation on both new end of the cable. 
+Mount the Arduino Uno, the relay board, the luster terminal and the power strip to the base plate in a similar way as shown in the image "Prototype.jpg".
+
+wiring:
+Connect one of the power cords phase/null wires and the ground wires each to a port of the lustre terminal. Connect the responding wires of the power strip on the other side of the terminal like you never cut it. The remaining phase/null wire is feed through the relay before the exit port is connected to the wire it was originally cut from. Here it is up to you if you only use the relay as a connector or feed this through the luster terminal like I did. It is recommended to fix the cable to the base plate in a way that avoids free wires in case of a pulling force applied to the cable. Now you should already be able to switch the power strip on and off when manually applying 5 volt to the relay.
+
+low voltage wiring:
+connect ground and Vcc from the arduino each to three of the lustre terminal ports. Also connect port 8,9 and 10 to one terminal port each.
+Connect one pair of GND and Vcc to the corresponding Port of the relay board. Connect the terminal coming from port 8 to the switching port of the relay board.
+The remaining two pairs of GND and Vcc are connected to one of the DHT22 each. The DHT22 that monitors humidity and temperature on the outside has its data pin connected to the terminal from port 9. The inside DHT22s data pin is connected to the port from port 10.
+
+Code:
+Now upload the arduino code "humidityControl" in the folder with the same name to the arduino.
+
+
+Running:
+Connect the arduinos power supply and the power cord to your main power. If the absolute humidity outside is now lower than inside and the inside temperature is >5°C the power strip is switched on. If you know connect fans to it you can use it to reduce the humidity in e.g. your basement. Ideally use a sucking and a blowing fan in combination.
